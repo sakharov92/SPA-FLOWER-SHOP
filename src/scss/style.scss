@@ -9,6 +9,7 @@
 }
 @import "normalize.scss";
 @import "fonts.scss";
+@import "burger-menu.scss";
 
 a {
   text-decoration: none;
@@ -24,10 +25,13 @@ a {
   .signIn {
     font-size: 20px;
     margin: 10px 0;
-    .col-md-3 {
+    .col {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
+      @media (max-width: 700px) {
+        justify-content: center;
+      }
     }
     i {
       padding: 0 5px;
@@ -43,6 +47,21 @@ a {
       padding-left: 10px;
     }
   }
+  @media (max-width: 767px) {
+    .headerTitleBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .helpBlock {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+      .search {
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+  }
   .helpBlock {
     display: flex;
     font-family: "Roboto-Regular";
@@ -56,8 +75,6 @@ a {
       }
     }
     &-text {
-      &__title {
-      }
       &__number {
         color: #000000;
         font-weight: bolder;
@@ -102,7 +119,7 @@ a {
     display: flex;
     align-items: center;
   }
-  .menu {
+  .row.menu {
     padding: 10px 15px;
     border-top: 1px solid #cfcdcd;
     border-bottom: 1px solid #cfcdcd;
@@ -111,9 +128,12 @@ a {
     align-items: center;
 
     .nav {
-      .col-md-3.nav {
-        padding-right: 0 !important;
+      .burger {
+        width: 30px;
+        height: 30px;
+        display: none;
       }
+
       ul {
         width: 100%;
         list-style-type: none;
@@ -138,6 +158,30 @@ a {
           color: #000000;
         }
       }
+      .burgerMenu {
+        display: none;
+      }
+      @media (max-width: 1199px) {
+        .burger {
+          display: flex;
+        }
+        ul.menu {
+          display: none;
+        }
+        .burgerMenu {
+          margin-left: 10px;
+          height: 0px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          transition: height 0.3s;
+          overflow: hidden;
+        }
+        .burgerMenu.active {
+          height: 280px;
+          display: flex;
+        }
+      }
     }
     .cart {
       font-family: "Roboto-Regular";
@@ -147,6 +191,8 @@ a {
 
       color: #000000;
       display: flex;
+      justify-content: flex-end;
+      align-self: flex-start;
       transition: color 0.3s;
       &:hover {
         color: #999999;
@@ -183,6 +229,12 @@ a {
         color: #000000;
       }
     }
+    @media (max-width: 767px) {
+      .promo {
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }
 .localWrapper {
@@ -191,6 +243,9 @@ a {
 .content {
   margin-top: 20px;
   height: 450px;
+  @media (max-width: 767px) {
+    height: 700px;
+  }
   .nav {
     &-item {
       padding-left: 15px;
@@ -252,6 +307,9 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 767px) {
+      height: 200px;
+    }
     &__title {
       span {
         color: #000;
@@ -299,6 +357,19 @@ a {
   }
 }
 .localWrapper {
+  @media (max-width: 767px) {
+    .nav {
+      padding-right: 0;
+    }
+  }
+  @media (max-width: 574px) {
+    .nav {
+      height: 500px;
+    }
+    .nav-item {
+      height: 150px;
+    }
+  }
   .head {
     p {
       margin-top: 40px;
@@ -316,6 +387,18 @@ footer {
   background-color: #f2f2f2;
   padding-top: 50px;
   margin-top: 50px;
+  @media (max-width: 767px) {
+    .links {
+      text-align: center;
+    }
+    .UsefulInformation {
+      text-align: center;
+    }
+    .StayConnected {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
   .links {
     p {
       font-family: "Roboto-Regular";
@@ -381,10 +464,6 @@ footer {
       border-radius: 30px;
       margin-bottom: 10px;
     }
-    .name {
-    }
-    .email {
-    }
     button {
       font-size: 13px;
       color: #fff;
@@ -429,6 +508,7 @@ footer {
     font-size: 18px;
     line-height: 1.8;
     color: #000000;
+    font-weight: bold;
   }
 
   .priceBlock {
@@ -453,18 +533,23 @@ footer {
     border: 1px solid #000;
     border-radius: 16px;
     transition: background-color 0.5s;
+    outline: none;
     &:hover {
       background-color: rgba($color: #e5e2e2, $alpha: 1);
     }
   }
+  button.active {
+    background-color: rgb(197, 229, 241);
+  }
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     list-style-type: none;
     margin: 0;
     padding: 0;
     li {
+      margin: 0 10px;
       display: flex;
       flex-direction: column;
       .name {
@@ -473,4 +558,39 @@ footer {
       }
     }
   }
+}
+.copyright {
+  padding: 10px;
+  font-family: "Roboto-Regular";
+  font-size: 13px;
+  line-height: 1.9;
+  text-align: center;
+  color: #999999;
+  i {
+    margin: 0 10px;
+  }
+}
+.openCart {
+  width: 40vw;
+  height: 20vw;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  background-color: #fff;
+  display: none;
+  padding: 20px;
+  .head {
+    display: flex;
+    font-size: 1.5em;
+    width: 100%;
+    justify-content: space-between;
+    .closeCart:hover {
+      color: grey;
+      cursor: pointer;
+    }
+  }
+}
+.show {
+  display: block;
 }

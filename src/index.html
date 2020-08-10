@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.min.css">
-
 </head>
 
 <body>
+
+
     <div class="wrapper">
         <div class="container header">
             <div class="row signIn">
-                <div class="col-md-3 offset-md-9"><i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i><i
+                <div class="col"><i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i><i
                         class="fab fa-instagram"></i><span>login | Register</span></div>
             </div>
-            <div class="row">
+            <div class="row headerTitleBlock">
                 <div class="col-md-3">
                     <div class="helpBlock">
                         <div class="helpBlock-phoneIMG"><i class="fas fa-mobile-alt"></i></div>
@@ -40,8 +41,12 @@
                 </div>
             </div>
             <div class="row menu">
-                <div class="col-md-10 nav">
-                    <ul>
+                <div class="col-md-10 col-6 nav">
+                    <div class="burger">
+                        @@include('_burger-menu.html')
+
+                    </div>
+                    <ul class="menu">
                         <a href="#">
                             <li>Home </li>
                         </a> <a href="#">
@@ -63,8 +68,35 @@
                         </a> <a href="#">
                             <li> Terrariums</li>
                         </a> </ul>
+
+
+                    <ul class="burgerMenu">
+                        <a href="#">
+                            <li>Home </li>
+                        </a> <a href="#">
+                            <li> Christmas </li>
+                        </a> <a href="#">
+                            <li> Season’s Best </li>
+                        </a> <a href="#">
+                            <li> Wedding </li>
+                        </a> <a href="#">
+                            <li> By Occasions </li>
+                        </a> <a href="#">
+                            <li> By Types </li>
+                        </a> <a href="#">
+                            <li> By Prices </li>
+                        </a> <a href="#">
+                            <li> By Flowers </li>
+                        </a> <a href="#">
+                            <li> Plants </li>
+                        </a> <a href="#">
+                            <li> Terrariums</li>
+                        </a> </ul>
+
+
+
                 </div>
-                <div class="col-md-2 cart">
+                <div class="col-md-2 col-6 cart">
                     <div class="cart__img"><i class="fas fa-shopping-cart"></i></div>
                     <div class="cart__text">Cart (0)</div>
                 </div>
@@ -123,11 +155,9 @@
             </div>
             <div class="container products_list">
                 <div class="row">
-                    <div class="col-2 head">
+                    <div class="col head">
                         <p>Featured Products</p>
                     </div>
-
-
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -136,11 +166,9 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-2 head">
+                    <div class="col head">
                         <p>New Arrivals</p>
                     </div>
-
-
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -148,37 +176,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-2 head">
+                    <div class="col head">
                         <p>Most Popular</p>
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col-12">
-
                         <div id="products_popular"></div>
                     </div>
                 </div>
             </div>
-
-
             <!-- products -->
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
         <footer>
             <div class="container">
                 <div class="row">
@@ -226,9 +235,16 @@
                 </div>
             </div>
         </footer>
-
-
-
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-12"><img src="./img/cards_ae.png" alt=""></div>
+                    <div class="col-sm-4 col-12">© 2020 flowershop.com</div>
+                    <div class="col-sm-4 col-12"><i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i><i
+                            class="fab fa-instagram"></i></div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
