@@ -5,6 +5,7 @@ import { PRODUCTS_BLOCK_ARRIVALS_PRODUCTS } from './root.js';
 import { PRODUCTS_BLOCK_POPULAR_PRODUCTS } from './root.js';
 import { localStorageCart } from './localStorage.js'
 
+
 class Products {
     render() {
         const currentProducts = localStorageCart.getProducts();

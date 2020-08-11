@@ -1119,8 +1119,8 @@ footer .Testimonials p {
 }
 
 .openCart {
-  width: 40vw;
-  height: 20vw;
+  width: 250px;
+  height: 200px;
   position: fixed;
   top: 30px;
   right: 30px;
@@ -1147,6 +1147,34 @@ footer .Testimonials p {
 .openCart .head .closeCart:hover {
   color: grey;
   cursor: pointer;
+}
+
+.openCart ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.openCart .sum {
+  padding: 5px 15px;
+  position: absolute;
+  bottom: 8px;
+  right: 100px;
+}
+
+.openCart .cartOrder {
+  padding: 5px 15px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.openCart .cartOrder:hover {
+  background-color: #ebe7e7;
 }
 
 .show {
